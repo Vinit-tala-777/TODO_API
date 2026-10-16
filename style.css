@@ -1,0 +1,196 @@
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #c6eff8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    padding: 30px 20px;
+}
+
+/* Main container */
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Main heading */
+h1 {
+    text-align: center;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    margin-bottom: 12px;
+}
+
+/* Subtitle */
+.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Form centered on page */
+#todo-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+/* Inputs and textarea */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #b7c0c8;
+    border-radius: 7px;
+    background: #fff;
+    color: #222;
+    font: inherit;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #4d90e6;
+    border-color: #4d90e6;
+}
+
+/* Buttons */
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 7px;
+    background: #4d90e6;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3578ce;
+}
+
+/* Submit button */
+#todo-form button {
+    width: 100%;
+}
+
+/* Tasks heading */
+h2 {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+}
+
+/* Task grid */
+#todo-list {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Individual task cards */
+.todo-card,
+.task-item {
+    min-width: 0;
+    padding: 18px;
+    background: white;
+    border: 1px solid #d5dce2;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+
+.todo-card h3,
+.task-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.todo-card p,
+.task-item p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Card buttons */
+.todo-card button,
+.task-item button {
+    margin: 8px 6px 0 0;
+}
+
+/* Delete button */
+.todo-card button:last-child,
+.task-item button:last-child {
+    background: #e74c3c;
+}
+
+.todo-card button:last-child:hover,
+.task-item button:last-child:hover {
+    background: #c9362b;
+}
+
+/* Empty task message */
+.empty-message,
+.empty-state {
+    margin-top: 20px;
+    color: #555;
+    text-align: center;
+}
+
+/* Tablet: two cards per row */
+@media (max-width: 850px) {
+    #todo-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile: one card per row */
+@media (max-width: 550px) {
+    body {
+        padding: 20px 14px;
+    }
+
+    #todo-list {
+        grid-template-columns: 1fr;
+    }
+
+    #todo-form {
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- This is the main page container for the todo app -->
+    <main class="todo-container">
+        <!-- Heading and short intro text -->
+        <h1>My To-Do List</h1>
+        <p class="intro" align="center">Write your tasks and stay organized.</p>
+
+        <!-- This form lets the user add a new task -->
+        <form id="todo-form">
+            <div class="form-group">
+                <label for="todo-title">Task Name</label>
+                <input type="text" id="todo-title" name="title" placeholder="enter task name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="todo-description">Details</label>
+                <textarea id="todo-description" name="description" rows="3" placeholder="Add more details here" required></textarea>
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="todo-date">When is it due?</label>
+                <input type="date" id="todo-date" name="date" required>
+            </div> -->
+
+            <!-- <button type="submit" onclick="Insert()">Add</button> -->
+            <button type="button" onclick="Insert()">Submit</button>
+            <button type="button" onclick="show()">Show Tasks</button>
+            <button type="button" onclick="update()">Save Changes</button>
+
+        
+        </form>
+
+        <section class="todo-list-section">
+            <h2 align="center">My Tasks</h2>
+            <ul id="todo-list">
+               
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
